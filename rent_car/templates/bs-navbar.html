@@ -1,0 +1,51 @@
+{% load static %}
+<header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse" data-header-hover="light">
+        <div class="container-fluid">
+            <div class="col-auto col-xxl-3 col-lg-2 me-lg-0 me-auto">
+                <a class="navbar-brand" href="demo-business.html">
+                    <img src="{% static '' %}car/images/logo.png" data-at2x="images/demo-business-logo-white@2x.png" alt="" class="default-logo">
+                    <img src="{% static '' %}car/images/logo.png" data-at2x="images/demo-business-logo-black@2x.png" alt="" class="alt-logo">
+                    <img src="{% static '' %}car/images/logo.png" data-at2x="images/demo-business-logo-black@2x.png" alt="" class="mobile-logo">
+                </a>
+            </div>
+            <div class="col-auto menu-order position-static">
+                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav alt-font">
+                        <li class="nav-item"><a href="{% url 'business-home' %}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{% url 'business-about' %}" class="nav-link">About</a></li>
+                        <li class="nav-item dropdown dropdown-with-icon-style02">
+                            <a href="{% url 'profile_view' %}" class="nav-link">Profile</a>
+                            <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a href="{% url 'profile_view' %}"><i class="bi bi-briefcase"></i>User profile</a></li>
+                                <li><a href="{% url 'business-register' %}"><i class="bi bi-clipboard-data"></i>Register</a></li>
+                                <li><a href="{% url 'business-login' %}"><i class="bi bi-peace"></i>Login</a></li>
+                                <li><a href="{% url 'logout' %}"><i class="bi bi-bar-chart-line"></i>Logout</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="{% url 'business-clients' %}" class="nav-link">Clients</a></li>
+                        <li class="nav-item"><a href="{% url 'business-pricing' %}" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="{% url 'business-blog' %}" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="{% url 'car_rent_list' %}" class="nav-link">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
+                <div class="header-icon">
+                    <div class="d-none d-xxl-inline-block me-25px xxl-me-10px"><div class="alt-font fs-15 xl-fs-13 widget-text fw-500"><span class="w-35px h-35px bg-base-color d-inline-block lh-36 me-10px border-radius-100px"><i class="feather icon-feather-phone me-10px"></i></span><a href="tel:1800222000" class="widget-text text-white-hover">1 800 222 000</a></div></div>
+                    <div class="header-button"><a href="{% url 'business-contact' %}" class="btn btn-very-small btn-transparent-white-light btn-rounded">Contact</a></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation -->
+</header>

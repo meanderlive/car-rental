@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website.apps.WebsiteConfig',
+    'rent_car',  # 'carapp' before 'website'
+    #'website.apps.WebsiteConfig',
     'django_filters',
-    'graph',
+
+
+    #'graph',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +61,7 @@ ROOT_URLCONF = 'AMG.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,19 +120,31 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+LOGIN_URL = 'business-login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/staticRoot')
 STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
+
+"""STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
+
 ]
-MEDIA_ROOT =os.path.join(BASE_DIR, "static/images")
+"""
+'''STATIC_ROOT = os.path.join(BASE_DIR, 'static/staticRoot')
+STATIC_URL = '/static/'''
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+'''STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]'''
+#MEDIA_ROOT =os.path.join(BASE_DIR, "static/images")
 #test data
 EMAIL_HOST='localhost'
 EMAIL_PORT='1025'
 EMAIL_HOST_USER=''
 EMAIL_USE_TLS=False
+
+AUTH_USER_MODEL = 'rent_car.User'

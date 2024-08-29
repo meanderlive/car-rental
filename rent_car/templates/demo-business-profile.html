@@ -1,0 +1,77 @@
+
+
+{% extends 'css_js_contant.html' %}
+{% block content %}
+{% load static %}
+<!-- start header -->
+
+<!-- end header -->
+<!-- start page title -->
+<section class="page-title-big-typography bg-dark-gray ipad-top-space-margin" data-parallax-background-ratio="0.5" style="background-image: url('{% static 'car/images/black-car-with-license-plate-number-3_713562-2454.avif' %}')">
+    <div class="opacity-extra-medium bg-dark-slate-blue"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center extra-small-screen">
+            <div class="col-12 position-relative text-center page-title-extra-large">
+                <h1 class="m-auto text-white text-shadow-double-large fw-500 ls-minus-3px xs-ls-minus-2px" data-anime='{ "translateY": [15, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>Profile luxury cars</h1>
+            </div>
+            <div class="down-section text-center" data-anime='{ "translateY": [-15, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                <a href="#down-section" aria-label="scroll down" class="section-link">
+                    <div class="d-flex justify-content-center align-items-center mx-auto rounded-circle fs-30 text-white">
+                        <i class="feather icon-feather-chevron-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title -->
+<!-- start section -->
+<section>
+    <div class="container">
+        <div class="row g-0 justify-content-center">
+
+            <div class="col-xl-4 col-lg-5 col-md-10 contact-form-style-04 md-mb-50px">
+                <span class="fs-26 xs-fs-24 alt-font fw-600 text-dark-gray mb-20px d-block">Create Profile</span>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label class="text-dark-gray mb-10px fw-500">Full Name<span class="text-red">*</span></label>
+                    {{ form.full_name }}
+                    {% if form.full_name.errors %}
+                    <div class="error">{{ form.full_name.errors }}</div>
+                    {% endif %}
+
+                    <label class="text-dark-gray mb-10px fw-500">Mobile Number<span class="text-red">*</span></label>
+                    {{ form.mobile_number }}
+                    {% if form.mobile_number.errors %}
+                    <div class="error">{{ form.mobile_number.errors }}</div>
+                    {% endif %}
+
+                    <label class="text-dark-gray mb-10px fw-500">Profile Image<span class="text-red">*</span></label>
+                    {{ form.image }}
+                    {% if form.image.errors %}
+                    <div class="error">{{ form.image.errors }}</div>
+                    {% endif %}
+                    <label class="text-dark-gray mb-10px fw-500">Address<span class="text-red">*</span></label>
+                    {{ form.address }}
+                    {% if form.address.errors %}
+                    <div class="error">{{ form.address.errors }}</div>
+                    {% endif %}
+                    <br><br>
+                    <button class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow w-100" type="submit">Create</button>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+<!-- end section -->
+
+<!-- start footer -->
+{% endblock %}
+<!-- end footer -->
+<!-- start scroll progress -->
+
+<!-- end scroll progress -->
+<!-- javascript libraries -->
